@@ -18,19 +18,19 @@ const DrawerLayout = ({ children }: Props) => {
         checked={open}
         readOnly
       />
-      <div className="drawer-content flex flex-col">{children}</div>
+      <div className="drawer-content flex flex-col ">{children}</div>
       <div className="drawer-side">
         <label
           className="drawer-overlay"
           // add a onClick handler here to close the drawer
           onClick={() => setOpen(false)}
         ></label>
-        <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
+        <ul className="menu p-2 overflow-y-auto w-[150px] bg-base-100">
           <li>
-            <a>Sidebar Item 1</a>
+            <a>Sidebar</a>
           </li>
           <li>
-            <a>Sidebar Item 2</a>
+            <a>Sidebar</a>
           </li>
         </ul>
       </div>
