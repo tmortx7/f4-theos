@@ -1,4 +1,5 @@
 import { type FC } from "react"
+import { Header } from "./Header"
 
 type AppProps = {
   children: React.ReactNode
@@ -6,7 +7,8 @@ type AppProps = {
 
 export const Layout:FC<AppProps> = ({children}) =>{
   return(
-    <div className="flex flex-row w-full h-[100vh]">
+    <div className="flex flex-col w-full h-[100vh]">
+      <Header />
       {children}
     </div>
   )
