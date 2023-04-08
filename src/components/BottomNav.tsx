@@ -1,7 +1,11 @@
+import { useSessionStorage } from "usehooks-ts";
+
 export const BottomNav = () => {
+  const [, setOpen] = useSessionStorage("drawer", false);
+  const toggleDrawer = () => setOpen((prev) => !prev);
   return (
     <div className="btm-nav">
-      <button>
+      <button onClick={toggleDrawer}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
