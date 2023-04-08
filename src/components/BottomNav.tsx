@@ -4,7 +4,7 @@ export const BottomNav = () => {
   const [, setOpen] = useSessionStorage("drawer", false);
   const toggleDrawer = () => setOpen((prev) => !prev);
   return (
-    <div className="btm-nav">
+    <div className="btm-nav bg-slate-200">
       <button onClick={toggleDrawer}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@ export const BottomNav = () => {
           />
         </svg>
       </button>
-      <button className="active">
+      <button>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
