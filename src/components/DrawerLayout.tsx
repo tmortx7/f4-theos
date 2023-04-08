@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from "react";
 import { useSessionStorage } from "usehooks-ts";
 
@@ -27,7 +28,7 @@ const DrawerLayout = ({ children }: Props) => {
         ></label>
         <ul className="menu p-2 overflow-y-auto w-[150px] bg-base-100">
           <li>
-            <a>Sidebar</a>
+            <Link href="/home">Home</Link>
           </li>
           <li>
             <a>Sidebar</a>

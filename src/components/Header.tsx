@@ -1,9 +1,54 @@
 import COC from "../../public/coc-logo.svg";
+import router from "next/router";
+import { useAuth, SignedIn, SignedOut, useUser } from "@clerk/nextjs";
+
 export const Header = () => {
+  const { signOut } = useAuth();
+  const {user} = useUser();
+
   return (
-    <div>
-      <div className="flex h-[100px] w-full flex-row">
+    <div className="flex flex-row">
+      <div className="flex basis-3/4 flex-row gap-4">
         <COC className="ml-1 mt-1 h-[50px]" />
+      </div>
+      <div className="flex basis-1/4 flex-row justify-end">
+        <SignedOut>
+          <button
+            onClick={() => void router.push("/signin")}
+            className=" mr-6 text-sm font-semibold  text-black"
+          >
+            sign-in
+          </button>
+        </SignedOut>
+        <SignedIn>
+          <div className="dropdown-end dropdown">
+            <label tabIndex={0} className="">
+              <div className="">
+                <button className="btn btn-circle btn-sm mt-2 mr-2">{user?.lastName?.charAt(0)}</button>
+              </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className="dropdown-content menu rounded-box mt-4 w-52 bg-white text-black shadow"
+            >
+              <li className="hover:bg-gray-50 hover:text-black ">
+                <button onClick={() => void router.push("/user")}>
+                  Profile
+                </button>
+              </li>
+              <li className="hover:bg-gray-50 hover:text-black">
+                <button
+                  onClick={() => {
+                    void signOut()
+                    void router.push("/");
+                  }}
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        </SignedIn>
       </div>
     </div>
   );

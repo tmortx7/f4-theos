@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
+import { createTRPCRouter, publicProcedure,protectedProcedure } from "~/server/api/trpc";
 
 export const exampleRouter = createTRPCRouter({
   hello: publicProcedure
@@ -13,4 +13,9 @@ export const exampleRouter = createTRPCRouter({
   getAll: publicProcedure.query(({ ctx }) => {
     return ctx.prisma.example.findMany();
   }),
+  hello2: protectedProcedure.query(({ ctx }) => {
+    return {
+      secret: `${ctx.auth?.userId} is using a protected procedure`
+    }
+  })
 });
