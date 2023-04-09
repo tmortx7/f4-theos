@@ -7,15 +7,15 @@ export const Header = () => {
   const {user} = useUser();
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row bg-slate-700  items-center">
       <div className="flex basis-3/4 flex-row gap-4">
-        <COC className="ml-1 mt-1 h-[50px]" />
+        <COC className="h-[30px] p-1" />
       </div>
       <div className="flex basis-1/4 flex-row justify-end">
         <SignedOut>
           <button
             onClick={() => void router.push("/signin")}
-            className=" mr-6 text-sm font-semibold  text-black"
+            className="btn btn-success text-slate-100 btn-sm  mr-2 p-2"
           >
             sign-in
           </button>
@@ -24,7 +24,7 @@ export const Header = () => {
           <div className="dropdown-end dropdown">
             <label tabIndex={0} className="">
               <div className="">
-                <button className="btn btn-circle btn-sm mt-2 mr-2">{user?.lastName?.charAt(0)}</button>
+                <button className="text-slate-50 mr-4 ">{user?.lastName}</button>
               </div>
             </label>
             <ul

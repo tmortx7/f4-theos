@@ -5,7 +5,7 @@ export const BottomNav = () => {
   const [, setOpen] = useSessionStorage("drawer", false);
   const toggleDrawer = () => setOpen((prev) => !prev);
   return (
-    <div className="btm-nav bg-slate-200">
+    <div className="btm-nav ">
       <button onClick={toggleDrawer}>
         <TfiLayoutMenuV size={30}/>
       </button>
