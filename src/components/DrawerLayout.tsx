@@ -32,7 +32,7 @@ const DrawerLayout = ({ children }: Props) => {
           // add a onClick handler here to close the drawer
           onClick={() => setOpen(false)}
         ></label>
-        <div className="w-[110px] overflow-y-auto bg-white">
+        <div className="w-[110px] overflow-y-auto bg-[#374151]">
           <div className="flex flex-col items-center">
             <COC className="mt-4 h-[40px]" />
             <div className="divider"></div>
